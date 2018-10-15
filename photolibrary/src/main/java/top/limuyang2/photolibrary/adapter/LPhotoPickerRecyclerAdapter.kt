@@ -2,12 +2,12 @@ package top.limuyang2.photolibrary.adapter
 
 import android.content.Context
 import android.graphics.Rect
-import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.Toast
+import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.l_pp_item_photo_picker.view.*
 import top.limuyang2.photolibrary.R
 import top.limuyang2.photolibrary.model.LPhotoModel
@@ -118,15 +118,16 @@ class PhotoPickerRecyclerAdapter(private val context: Context,
  */
 class LPPGridDivider(private val space: Int, private val columnsNumber: Int, private val bottomLayoutHeight: Int = 0) : RecyclerView.ItemDecoration() {
 
-    override fun getItemOffsets(outRect: Rect?, view: View?, parent: RecyclerView, state: RecyclerView.State?) {
-        outRect?.let {
+    override fun getItemOffsets(outRect: Rect, view: View, parent: RecyclerView, state: RecyclerView.State) {
+        outRect.let {
             parent.childCount
 
             //当前第几行, 因为从0行开始，所以要+1
             val nowLine = (parent.getChildAdapterPosition(view) / columnsNumber) + 1
 
             //总行数，从1开始
-            val allLines = Math.ceil(parent.adapter.itemCount.toDouble() / columnsNumber).toInt()
+            val allLines = Math.ceil((parent.adapter?.itemCount
+                                      ?: 0).toDouble() / columnsNumber).toInt()
 
             //最后一行要加上底部工具栏的高度
             if (nowLine == allLines) {
@@ -138,7 +139,7 @@ class LPPGridDivider(private val space: Int, private val columnsNumber: Int, pri
             it.left = space
             it.right = space
             it.top = space
-//            it.bottom = space
+            //            it.bottom = space
         }
     }
 }

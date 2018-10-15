@@ -8,12 +8,12 @@ import android.content.res.ColorStateList
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
-import android.support.annotation.StyleRes
-import android.support.v4.view.ViewCompat
-import android.support.v7.widget.GridLayoutManager
-import android.support.v7.widget.RecyclerView
 import android.util.TypedValue
 import android.view.View
+import androidx.annotation.StyleRes
+import androidx.core.view.ViewCompat
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.l_activity_photo_picker.*
 import kotlinx.coroutines.experimental.android.UI
 import kotlinx.coroutines.experimental.async
@@ -50,13 +50,9 @@ class LPhotoPickerActivity : LBaseActivity() {
         private val STATE_SELECTED_PHOTOS = "STATE_SELECTED_PHOTOS"
 
         /**
-         * 拍照的请求码
-         */
-        private val REQUEST_CODE_TAKE_PHOTO = 1
-        /**
          * 预览照片的请求码
          */
-        private val RC_PREVIEW_CODE = 2
+        private const val RC_PREVIEW_CODE = 2
 
         private val SPAN_COUNT = 3
 
@@ -407,7 +403,7 @@ class LPhotoPickerActivity : LBaseActivity() {
      * @constructor
      */
     private class LPPOnScrollListener(private val context: Context) : RecyclerView.OnScrollListener() {
-        override fun onScrollStateChanged(recyclerView: RecyclerView?, newState: Int) {
+        override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
             if (newState == RecyclerView.SCROLL_STATE_IDLE) {
                 ImageEngineUtils.engine.resume(context)
             } else if (newState == RecyclerView.SCROLL_STATE_DRAGGING) {

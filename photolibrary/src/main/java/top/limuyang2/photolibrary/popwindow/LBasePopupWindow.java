@@ -18,10 +18,11 @@ package top.limuyang2.photolibrary.popwindow;
 import android.app.Activity;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
-import android.support.annotation.LayoutRes;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.PopupWindow;
+
+import androidx.annotation.LayoutRes;
 
 /**
  * Date 2018/8/1

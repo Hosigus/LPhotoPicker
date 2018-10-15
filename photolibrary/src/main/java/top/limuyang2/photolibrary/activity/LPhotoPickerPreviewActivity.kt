@@ -10,13 +10,13 @@ import android.graphics.drawable.ColorDrawable
 import android.os.Build
 import android.os.Bundle
 import android.support.annotation.StyleRes
-import android.support.v4.view.ViewCompat
-import android.support.v4.view.ViewPager
-import android.support.v4.view.ViewPropertyAnimatorListenerAdapter
 import android.util.TypedValue
 import android.view.View
 import android.view.WindowManager
 import android.view.animation.DecelerateInterpolator
+import androidx.core.view.ViewCompat
+import androidx.core.view.ViewPropertyAnimatorListenerAdapter
+import androidx.viewpager.widget.ViewPager
 import kotlinx.android.synthetic.main.l_pp_activity_photo_picker_preview.*
 import top.limuyang2.photolibrary.R
 import top.limuyang2.photolibrary.adapter.LPreviewPagerAdapter

@@ -21,11 +21,11 @@ package top.limuyang2.photolibrary.popwindow
 import android.app.Activity
 import android.graphics.drawable.ColorDrawable
 import android.os.Build
-import android.support.v4.view.ViewCompat
-import android.support.v7.widget.LinearLayoutManager
 import android.view.Gravity
 import android.view.View
 import android.view.WindowManager
+import androidx.core.view.ViewCompat
+import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.l_pp_popwindow_photo_folder.view.*
 import top.limuyang2.photolibrary.R
 import top.limuyang2.photolibrary.adapter.LFolderAdapter
